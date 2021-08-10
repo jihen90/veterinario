@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     delete 'pet_histories/:id', to: 'pet_histories#destroy', as: 'pet_histories_destroy'
   end
 
+  root 'clients#index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
