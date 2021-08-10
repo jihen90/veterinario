@@ -1,0 +1,57 @@
+<h3>Client</h3>
+
+<p id="notice"><%= notice %></p>
+
+<div class="py-5">
+  <p>
+    <strong>Name:</strong>
+    <%= @client.name %>
+  </p>
+
+  <p>
+    <strong>Phone num:</strong>
+    <%= @client.phone_num %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @client.email %>
+  </p>
+
+  <div class="py-4">
+    <%= link_to 'Edit', edit_client_path(@client) %> |
+    <%= link_to 'Back to main', clients_path %>
+  </div>
+
+
+</div>
+
+<h4>Pets</h4>
+
+<div class="py-5">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Max Weight</th>
+      <th>Max Heigth</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client.pets.each do |pet| %>
+      <tr>
+        <td><%= pet.name %></td>
+        <td><%= pet.max_weight %></td>
+        <td><%= pet.max_heigth %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <div class="pt-4">
+    <%= link_to 'Register Pet', new_client_pet_path(@client) %> |
+    <%= link_to 'Go to Pets', client_pets_path(@client) %>
+  </div>
+
+</div>
